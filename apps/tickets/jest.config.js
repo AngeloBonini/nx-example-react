@@ -1,13 +1,9 @@
 module.exports = {
-  displayName: 'tickets',
-  preset: '../../jest.preset.js',
+  name: 'tickets',
+  preset: '../../jest.config.js',
   transform: {
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
-    '^.+\\.[tj]sx?$': [
-      'babel-jest',
-      { cwd: __dirname, configFile: './babel-jest.config.json' },
-    ],
+    '^.+\\.[tj]sx?$': 'ts-jest'
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/tickets',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
+  coverageDirectory: '../../coverage/apps/tickets'
 };

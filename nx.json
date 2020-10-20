@@ -1,34 +1,38 @@
 {
   "npmScope": "happyorg",
-  "affected": {
-    "defaultBase": "master"
-  },
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
-    "tsconfig.base.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
     "tslint.json": "*",
-    ".eslintrc.json": "*",
     "nx.json": "*"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
-    }
   },
   "projects": {
     "tickets": {
+      "implicitDependencies": ["api"],
       "tags": []
     },
     "tickets-e2e": {
-      "tags": [],
-      "implicitDependencies": ["tickets"]
+      "tags": []
+    },
+    "api": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "agent": {
+      "implicitDependencies": ["api", "agent-api"],
+      "tags": []
+    },
+    "agent-e2e": {
+      "tags": []
+    },
+    "ticket-list": {
+      "tags": []
+    },
+    "agent-api": {
+      "tags": []
     }
   }
 }
